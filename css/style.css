@@ -1,16 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
 
 :root {
-  --bg-clr : #2e2e2e;
-  --fg-clr : #faf2fa;
+  --bg-color : #2a2a2a;
+  --ft-color : #f1f1f1;
 
-  
+  /* vibrant red */
+  --accent-0 :  #f22f2f;
+  /* vibrant blue */
+  --accent-1 : #2f2ff2;
+
+  --shadow-change-1 : 40px;
+  --shadow-chamge-2 : 50px; 
 }
 
 
-html, body {
-  padding: 0;
+body {
+  position: relative;
   margin: 0;
+  padding: 0;
+
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
 
   background-color: var(--bg-color);
-  color: var(--fg-color);
+  color: var(--ft-color);
+  display: grid;  
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  position: relative;
+  font-family: 'Nova Mono', monospace;
+  font-size: 10dvw;
+  z-index: 0;
+
+  user-select: none;
+}
+
+
+h1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50dvw;
+  height: 50dvw;
+  background: linear-gradient(135deg, #ff00cc, #33ccff);
+  opacity: 0.6; /* Adjust opacity as desired */
+  border-radius: 120%; /* Make it round */
+  filter: blur(100px); /* Apply the blur effect */
+  z-index: -1;
+}
+
+
+@keyframes bounce {
+  0% { transform: translateY(-20px); }
+  50% { transform: translateY(20px); }
+  100% { transform: translateY(-20px); }
 }
