@@ -52,12 +52,13 @@ h1::after {
   opacity: 0.6; /* Adjust opacity as desired */
   border-radius: 120%; /* Make it round */
   filter: blur(100px); /* Apply the blur effect */
+  animation: bounce 2s infinite;
   z-index: -1;
 }
 
 
 @keyframes bounce {
-  0% { transform: translateY(-20px); }
-  50% { transform: translateY(20px); }
-  100% { transform: translateY(-20px); }
+  0% { transform: translateY(-20vh); }
+  50% { transform: translateY(20vh); }
+  100% { transform: translateY(-20vh); }
 }
