@@ -1,23 +1,42 @@
 
 
-const typewrite = document.getElementById('typewrite')
-
-document.addEventListener('DOMContentLoaded', (e) => {
-    const twcontent = typewrite.innerText;
-    typewrite.innerText = ''
+const A = 'Hello, World!' ;
+const B = 'Muhammed Salih Mahdi';
 
 
-    let index = 0
+
+function typeWrite (elementId, content) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
     
+    var index = 0;
+
     const typeLetter = () => {
-        if (index <= twcontent.length) {
-            typewrite.innerText += twcontent.charAt(index)
-            index++
+        if (index < content.length) {
+            const l = content.charAt(index);
+
+            if (l == ' ' && index < content.length - 1) {
+                index++;
+                const m = content.charAt(index);
+                element.innerHTML += l + m
+            } else {
+                element.innerText += l;
+            }
+
+            index ++;
         } else {
-            clearInterval(typeInerval);
+            clearInterval(typeInterval);
         }
     }
 
-    const typeInerval = setInterval(typeLetter, 128)
+    const typeInterval = setInterval(typeLetter, 120);
+}
+
+
+document.addEventListener('DOMContentLoaded', (e) => {
+    
+
+    typeWrite('typewrite', A);
+    typeWrite('name', B);
 
 })
