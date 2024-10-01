@@ -16,7 +16,7 @@
   :root {
     --bg-color: #FFFCEB;
     --ft-color: #1f1f1f;
-    --accent-0: #2f2ff2;
+    --accent-0: #2577A6;
     --accent-1: #25A677;
   }
 }
@@ -94,27 +94,6 @@ h1 {
   user-select: none;
   position: relative;
   z-index: 2000;
-}
-
-#cursor {
-  width: 20px;
-  background-color: blue;
-  height: 100%;
-  animation: blk 0.1s infinite;
-}
-
-@keyframes blk {
-  0% {
-    background-color: blue;
-  }
-
-  50% {
-    transform: red;
-  }
-
-  100% {
-    transform: green;
-  }
 }
 
 
@@ -201,10 +180,37 @@ h1 {
   }
 }
 
+@media (min-width: 2560px /* 4K*/) {
+  .avatar-img {
+    width: 512px;
+    height: 512px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .uni {
+    font-size: 2rem;
+  }
+  .gy {
+    font-size: 3rem;
+  }
+
+  .degree {
+    font-size: 3rem;
+  }
+  .name {
+    font-size: 5rem;
+  }
+}
+
 
 footer {
 
   width: 100%;
+
+  margin-top: 64px;
 
   justify-content: center;
   align-items: center;
